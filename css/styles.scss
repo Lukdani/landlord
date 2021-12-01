@@ -1,0 +1,468 @@
+@import "./bootstrap.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: $custom-light;
+  font-family: $font-family;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  font-family: $header-font;
+}
+
+ul,
+ol {
+  margin: 2px 10px 2px 10px;
+  padding: 0;
+  list-style-position: inside;
+}
+
+li {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.btn {
+  border-radius: 1rem;
+  animation: fadeIn 2s;
+}
+.btn:hover i {
+  transform: scale(1.3);
+  transition: all ease-in 0.15s;
+}
+
+// HELPERS
+
+.hideOnSmall {
+  display: none;
+  @media (min-width: 996px) {
+    display: unset;
+  }
+}
+
+.hideOnLarge {
+  display: unset;
+  @media (min-width: 996px) {
+    display: none;
+  }
+}
+
+.verticalAlign {
+  display: inline-flex;
+  align-items: center;
+}
+
+// ANIMATIONS
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes changeColor {
+  0% {
+    color: $custom-orange;
+  }
+  33% {
+    color: $custom-lightBlue;
+  }
+  100% {
+    color: $custom-secondary;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+// BOOSTRAP COMPONENTS
+.navbar-toggler {
+  color: $custom-orange;
+  animation: changeColor 5s infinite linear;
+  border: 0;
+  outline: none;
+}
+.dropdown-menu {
+  border: 0;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 0;
+  position: absolute !important;
+  right: 0;
+  .dropdown-item {
+    color: $custom-primary;
+    font-size: 0.9rem;
+    padding: 0.25rem 0.5rem;
+    &:first-of-type {
+      padding-top: 0.5rem;
+    }
+    &:last-of-type {
+      padding-bottom: 0.5rem;
+    }
+    i {
+      color: $custom-lightBlue;
+      margin-right: 0.5rem;
+      width: 14px;
+    }
+  }
+}
+
+.dropdown-divider {
+  margin: 0 !important;
+}
+
+// NAVBAR
+
+.searchField {
+  border-radius: 0.5rem;
+  border: 0;
+  width: 250px;
+  @media (min-width: 996px) {
+    width: 400px;
+  }
+  padding: 0 1rem;
+  font-size: 1rem;
+  height: 2.375rem;
+  outline: 0;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-color: #fafafa;
+}
+.has-search input {
+  padding-left: 2.375rem;
+}
+
+.has-search {
+  margin-bottom: 1rem;
+  @media (min-width: 996px) {
+    margin-top: 1rem;
+  }
+  display: inline-block;
+}
+
+.has-search .form-control-feedback {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  width: 2.375rem;
+  height: 2.375rem;
+  line-height: 2.375rem;
+  text-align: center;
+  pointer-events: none;
+  color: #aaa;
+}
+.navbar {
+  background-color: $custom-light !important;
+  padding: 0 2rem;
+  @media (min-width: 996px) {
+    padding: 0 2.5rem;
+  }
+}
+
+.navbar-nav {
+  align-items: center;
+}
+.navbar-brand {
+  position: relative;
+  height: 150px;
+  width: 150px;
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: auto;
+    visibility: hidden;
+    &.shown {
+      visibility: visible !important;
+    }
+  }
+
+  .brand {
+    animation: fadeIn 1s;
+    padding: 1rem 0;
+    max-height: 150px;
+    @media (min-width: 996px) {
+      max-height: 150px;
+    }
+  }
+}
+
+.navbar-expand-lg .navbar-collapse {
+  font-size: 1.25rem;
+  @media (min-width: 996px) {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.nav-link {
+  color: $custom-primary !important;
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid transparent !important;
+  font-size: 1.25rem;
+  i {
+    margin-right: 0.25rem;
+  }
+}
+
+.nav-item:not(:last-of-type) {
+  margin-right: 0.75rem;
+}
+.nav-link:hover {
+  transform: scale(1.05);
+  transition: ease-in 0.15s all;
+  color: $custom-lightBlue !important;
+  border-bottom: 2px solid $custom-lightBlue !important;
+}
+
+.section {
+  padding: 2rem;
+  @media (min-width: 996px) {
+    padding: 3rem;
+  }
+}
+
+.section-header {
+  text-align: center;
+  font-size: 1.6rem;
+  padding: 1rem;
+  @media (min-width: 996px) {
+    font-size: 2rem;
+  }
+}
+
+.usp-header {
+  text-align: center;
+  padding: 3rem;
+  @media (min-width: 996px) {
+    padding: 6rem 3rem;
+  }
+  p {
+    font-size: 1.2rem;
+  }
+}
+
+.textLink {
+  color: $custom-lightBlue;
+  text-decoration: none;
+  height: 100%;
+}
+.textLink:hover {
+  color: inherit;
+  text-decoration: none;
+  border: 1px solid $custom-lightBlue;
+}
+
+.overlay {
+  background-image: url("../images/backgroundImage.png");
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+}
+
+.overlay-2 {
+  background-image: url("../images/backgroundImage2.png") !important;
+}
+
+.overlay::after {
+  content: "";
+  background-color: $custom-secondary;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 95%;
+  z-index: -1;
+}
+
+.overlay-2::after {
+  background-color: $custom-orange !important;
+}
+
+// APARTMENTS
+
+.apartment-container {
+  padding: 1rem 0rem;
+  @media (min-width: 996px) {
+    padding: 1rem;
+  }
+}
+
+.apartment-container:not(:first-child) {
+  @media (max-width: 996px) {
+    padding-top: 0;
+  }
+}
+
+.apartment-card {
+  padding: 0;
+  border-radius: 0.5rem;
+  animation: fadeIn 2s;
+
+  img {
+    border-radius: 0.5rem 0.5rem 0 0;
+  }
+}
+
+.apartment-header {
+  font-family: $font-family;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.apartment-card-content {
+  padding: 1rem;
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.apartment-info-box {
+  padding: 0.5rem;
+}
+
+.apartment-info-box-content {
+  background-color: $custom-primary;
+  border-radius: 0.25rem;
+  color: $custom-light;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-align: center;
+  padding: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  h3 {
+    font-size: 0.9rem;
+  }
+  p {
+    font-size: 1.1rem;
+  }
+}
+
+.button-section-container {
+  padding: 0.5rem;
+  button {
+    width: 100%;
+  }
+  button i.favorited {
+    color: $custom-secondary;
+  }
+  .apartment-favorite-button {
+    outline: 2px solid $custom-secondary;
+    i {
+      color: $custom-secondary;
+    }
+  }
+}
+
+// FEATURES
+
+.feature-container {
+  background-color: $custom-lightBlue;
+}
+
+.feature-card {
+  text-align: center;
+  padding: 1rem;
+  color: $light;
+  font-size: 1.1rem;
+  i {
+    display: block;
+    font-size: 3rem;
+    color: $custom-orange;
+    margin-bottom: 0.25rem;
+  }
+}
+
+// CONCEPT
+
+.concept-container {
+  background-color: $custom-orange;
+  img {
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+  }
+}
+
+.footer {
+  background-color: $custom-dark;
+  text-align: left;
+  padding: 4rem 3rem;
+  color: #c1c1c1;
+  font-size: 1.2rem;
+  .row {
+    align-items: center;
+  }
+
+  .col-12 {
+    margin: 1rem 0;
+    text-align: left;
+  }
+  .footer-contact {
+    text-align: left;
+    font-size: 0.9rem;
+    i {
+      font-size: 1.5rem;
+      margin: 0.5rem 0;
+      margin-right: 0.75rem;
+      width: 24px;
+    }
+  }
+  @media (min-width: 996px) {
+    .col-lg-4:last-of-type {
+      text-align: right;
+    }
+    .col-lg-4:nth-child(2) {
+      text-align: center;
+    }
+    img {
+      margin: 0 !important;
+    }
+  }
+
+  .col-12 {
+    text-align: left;
+  }
+  img {
+    height: 120px;
+  }
+  i {
+    font-size: 3rem;
+    margin: 0 0.25rem;
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.2);
+      transition: all 0.25s ease-in;
+    }
+  }
+}
