@@ -28,7 +28,7 @@
                     <i class="fas fa-user"></i><span style="margin-left: .25rem">Jens Antonsen</span>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#"><i class="fas fa-save"></i>Se gemte lejligheder</a>
+                    <a class="dropdown-item" href="#"><i class="fas fa-save"></i>Gemte lejligheder</a>
                     <a class="dropdown-item" href="#"><i class="fas fa-envelope"></i>Beskeder</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt"></i>Log ud</a>
